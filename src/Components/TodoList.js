@@ -14,6 +14,7 @@ export default function TodoList({ itemList, setItemList }) {
 
 
   const onHandleComplete = (key) => {
+
     const updatedList = [...itemList]
       updatedList.map((item) => {
         if (item.key === key) {
@@ -43,6 +44,9 @@ export default function TodoList({ itemList, setItemList }) {
   };
 
 
+
+ 
+
 // console.log(itemList)
   return (
     <div>
@@ -56,12 +60,13 @@ export default function TodoList({ itemList, setItemList }) {
               value={item.completed}
               onChange={() => onHandleComplete(item.key)}
               checked={item.completed}
+              className='todo--checkbox'
             />
 
             {editItemId === item.key ? (
-              <input type="text" onChange={onEditChange} value={InputOnEdit} className='todo--form_input_edit' />
+              <input autoFocus type="text" onChange={onEditChange} value={InputOnEdit} className='todo--form_input_edit' />
             ) : (
-              <p className="todo--text">{item.name}</p>
+              <p  className={item.completed ? "todo--text completed": "todo--text "}>{item.name}</p>
             )}
 
             <button className='button button-round' onClick={() => onHandleDelete(item.key)}>X</button>

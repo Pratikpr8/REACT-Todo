@@ -1,16 +1,36 @@
  .todo--list{
-     background-color: hsl(0,5%,75%);
+     /* background-color: hsl(0,5%,75%); */
+     /* background-color: hsl(30,100%,60%); */
+     border:1px solid hsl(25,70%,60%);
+     caret-color: hsl(25,70%,60%);
+     color:hsl(25,70%,60%) ;
      border-radius: 5px;
      width: 400px;
      height: 50px;
      margin: 20px auto;
      font-weight: bold;
-    display: flex;
-    align-items: center;
+     display: flex;
+     align-items: center;
  }
 
  .todo--text {
     padding: 10px;
     margin: 0 auto;
     font-size: 18px;
+
+ }
+
+ .completed{
+    text-decoration: line-through;
+    text-decoration-thickness:25%;
+    text-decoration-color: hsl(0,5%,75%);
+
+ }
+
+ input[type=checkbox]{
+    cursor: pointer;
+    height: 30px;
+    width: 30px;
+    margin-left:5px;
+
  }

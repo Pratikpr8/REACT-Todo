@@ -15,7 +15,8 @@ body{
 .todo--header{
     margin: 0;
     padding: .1em;
-    color: hsl(0,5%,75%);
+    /* color: hsl(0,5%,75%); */
+    color: hsl(25,70%,60%);
 }
 
 .todo--container{
@@ -27,6 +28,12 @@ body{
     margin: 50px auto;
     border-radius: .5rem;
 } 
+
+
+.todo--form{
+    display: flex;
+    align-items: center;
+}
 
 .todo--form_input{
     outline: none;
@@ -69,13 +76,14 @@ body{
     width: 80px;
     padding: .5em 1em;
     background-color: hsl(0,0%,0%);
-    border: 2px solid hsl(0,5%,75%);
+    border: 2px solid hsl(25,70%,60%);
     border-radius: .5em;
-    color: hsl(0,5%,75%);
+    color: hsl(25,70%,60%);
     cursor: pointer;
     font-weight: bold;
     font-size: 16px;
     text-align: center;
+    margin-right:5px;
     
 }
 

@@ -2,6 +2,7 @@ import React,{useState, useEffect} from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import TodoList from './Components/TodoList'
 import './Css/app.css'
+import FlipMove from 'react-flip-move';
 
 export default function App() {
 
@@ -30,6 +31,7 @@ useEffect(()=>{
 
   const onHandleChange = (event) => {
       setInput(event.target.value);
+      {}
   }
 
 
@@ -50,21 +52,25 @@ useEffect(()=>{
       <div>
         <form className='todo--form' onSubmit={onHandleSubmit}>
         <input 
+          
           className='todo--form_input'
           onChange={onHandleChange} 
           type="text" 
           placeholder='Enter a Todo' 
           value={input}
+          
         />
-          <button className='button' onClick={onHandleClick}>Add</button>
+          <button className='button' onClick={onHandleClick} disabled={!input}>Add</button>
         </form>
       </div>
 
       <div>
+      <FlipMove >
         <TodoList 
           itemList={itemList}
           setItemList={setItemList}
         />
+        </FlipMove>
 
       </div>
     </div>
