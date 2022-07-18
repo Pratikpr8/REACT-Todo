@@ -55,22 +55,28 @@ export default function TodoList({ itemList, setItemList }) {
         return (
           <div className="todo--list" key={item.key}>
 
+          <div>
             <input
               type="checkbox"
               value={item.completed}
               onChange={() => onHandleComplete(item.key)}
               checked={item.completed}
               className='todo--checkbox'
-            />
+              />
+          </div>
+           
 
+            
             {editItemId === item.key ? (
+
               <input autoFocus type="text" onChange={onEditChange} value={InputOnEdit} className='todo--form_input_edit' />
-            ) : (
-              <p  className={item.completed ? "todo--text completed": "todo--text "}>{item.name}</p>
-            )}
+              ) : (
+                <p  className={item.completed ? "todo--text completed": "todo--text "}>{item.name}</p>
+                )}
+            
+            
 
             <button className='button button-round' onClick={() => onHandleDelete(item.key)}>X</button>
-
            
             {editItemId === item.key ? (
               <button className='button button-round' onClick={() => onHandleUpdate(item.key)}>✓</button>
@@ -83,3 +89,6 @@ export default function TodoList({ itemList, setItemList }) {
     </div>
   );
 }
+
+
+// ✎
