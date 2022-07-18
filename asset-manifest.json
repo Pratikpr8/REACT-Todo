@@ -1,0 +1,10 @@
+{
+  "files": {
+    "main.js": "/REACT-Todo/static/js/main.badc2048.js",
+    "index.html": "/REACT-Todo/index.html",
+    "main.badc2048.js.map": "/REACT-Todo/static/js/main.badc2048.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.badc2048.js"
+  ]
+}
