@@ -1,11 +1,11 @@
 import React,{useState, useEffect} from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import TodoList from './Components/TodoList'
+import './Css/app.css'
 
 export default function App() {
 
   const[input, setInput] = useState("")
-  // const[itemList, setItemList] = useState(JSON.parse(localStorage.getItem("Todo_List")) || [])
   const[itemList, setItemList] = useState([])
 
 
@@ -44,7 +44,7 @@ useEffect(()=>{
   return (
     <div className='todo--container'>
       <div className='todo--header'>
-        <h1 className='todo--title'>Todo </h1>
+        <h1 className='todo--title'>Todo's</h1>
       </div>
 
       <div>
@@ -56,7 +56,7 @@ useEffect(()=>{
           placeholder='Enter a Todo' 
           value={input}
         />
-          <button onClick={onHandleClick}>Add Todo</button>
+          <button className='button' onClick={onHandleClick}>Add</button>
         </form>
       </div>
 

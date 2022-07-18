@@ -49,13 +49,7 @@ export default function TodoList({ itemList, setItemList }) {
       {itemList.map((item) => {
       
         return (
-          <div key={item.key}>
-            {editItemId === item.key ? (
-              <input type="text" onChange={onEditChange} value={InputOnEdit} />
-            ) : (
-              <p>{item.name}</p>
-            )}
-            <button onClick={() => onHandleDelete(item.key)}>X</button>
+          <div className="todo--list" key={item.key}>
 
             <input
               type="checkbox"
@@ -63,10 +57,20 @@ export default function TodoList({ itemList, setItemList }) {
               onChange={() => onHandleComplete(item.key)}
               checked={item.completed}
             />
+
             {editItemId === item.key ? (
-              <button onClick={() => onHandleUpdate(item.key)}>Update</button>
+              <input type="text" onChange={onEditChange} value={InputOnEdit} className='todo--form_input_edit' />
+            ) : (
+              <p className="todo--text">{item.name}</p>
+            )}
+
+            <button className='button button-round' onClick={() => onHandleDelete(item.key)}>X</button>
+
+           
+            {editItemId === item.key ? (
+              <button className='button button-round' onClick={() => onHandleUpdate(item.key)}>✓</button>
               ) : (
-                <button onClick={() => setEditItemId(item.key)}>✎</button>
+                <button className='button button-round' onClick={() => setEditItemId(item.key)}>✎</button>
               )}
           </div>
         );

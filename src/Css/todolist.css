@@ -1,0 +1,16 @@
+ .todo--list{
+     background-color: hsl(0,5%,75%);
+     border-radius: 5px;
+     width: 400px;
+     height: 50px;
+     margin: 20px auto;
+     font-weight: bold;
+    display: flex;
+    align-items: center;
+ }
+
+ .todo--text {
+    padding: 10px;
+    margin: 0 auto;
+    font-size: 18px;
+ }
