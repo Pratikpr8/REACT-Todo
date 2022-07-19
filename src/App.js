@@ -1,8 +1,8 @@
 import React,{useState, useEffect} from 'react';
 import { v4 as uuidv4 } from 'uuid';
-import TodoList from './Components/TodoList'
-import './Css/app.css'
-import FlipMove from 'react-flip-move';
+import TodoList from './Components/TodoList';
+import './Css/app.css';
+
 
 export default function App() {
 
@@ -65,12 +65,12 @@ useEffect(()=>{
       </div>
 
       <div>
-      <FlipMove >
+
+
         <TodoList 
           itemList={itemList}
           setItemList={setItemList}
-        />
-        </FlipMove>
+          /> 
 
       </div>
     </div>

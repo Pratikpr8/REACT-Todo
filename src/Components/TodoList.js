@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import FlipMove from 'react-flip-move';
 
 export default function TodoList({ itemList, setItemList }) {
 
@@ -53,7 +54,8 @@ export default function TodoList({ itemList, setItemList }) {
       {itemList.map((item) => {
       
         return (
-          <div className="todo--list" key={item.key}>
+          <div className="todo--list" key={item.key}>          
+
 
           <div>
             <input
@@ -68,12 +70,12 @@ export default function TodoList({ itemList, setItemList }) {
 
             
             {editItemId === item.key ? (
-
+              
               <input autoFocus type="text" onChange={onEditChange} value={InputOnEdit} className='todo--form_input_edit' />
               ) : (
                 <p  className={item.completed ? "todo--text completed": "todo--text "}>{item.name}</p>
                 )}
-            
+           
             
 
             <button className='button button-round' onClick={() => onHandleDelete(item.key)}>X</button>
@@ -82,10 +84,11 @@ export default function TodoList({ itemList, setItemList }) {
               <button className='button button-round' onClick={() => onHandleUpdate(item.key)}>✓</button>
               ) : (
                 <button className='button button-round' onClick={() => setEditItemId(item.key)}>✎</button>
-              )}
-          </div>
-        );
-      })}
+                )}
+          </div>                
+        );}
+      )}
+      
     </div>
   );
 }
